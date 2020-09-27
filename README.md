@@ -17,6 +17,7 @@ This filter (in some parts) is based on Kryszard's Loot Filter version 1.9. Cred
 # Notes
 
 As long there is no way to get a simply the item's basename (similarly to ILVL) from loot filteration QOL feature, this item.filter will show both "[s]" and "superior" texts for an item which is superior in quality.
+
 I tried to get rid of the superior prefix (replace it with "[s]"), but it made the filter so laggy to use (especially in maps), I had to skip it (With ethereal items this works without "aforementioned tricks" as ethereal is not a prefix in item's name (its just shown with reduced opacity)).
 
 # Showcase
