@@ -1,6 +1,6 @@
 ﻿// Ixoth's loot filter
-// Version 1.10
-// Last time updated: 25.9.2020
+// Version 1.11
+// Last time updated: 1.10.2020
 // Feedback on the filter: send message to ixoth72 @ reddit
 //
 // Release History:
@@ -15,12 +15,13 @@
 //        - ETH -> E
 //        - SUP and ETH -> S, E
 //      - item level (in brackets) now has i as prefix to signify that the value is item level
-//      - socket count is now shown in curly braces instead of brackets
+//      - socket count is now shown in curly braces instead of brackets (more items will be probably supported later)
 //
 // 1.07 reverted item name shortening, items are shown with their full name _except_ the quality prefix part (that is shown with either E for ethereal, or S as superior)
 // 1.08 fix the uniques/set items to loose their name in char's inventory
 // 1.09 attempt to solve ui lag (when lot of items in the ground)
 // 1.10 add imbuables (this time only circlets)
+// 1.11 certain selected (2h) weapons show in brackets the max socket count
 //
 // - This loot filter hides following things:
 //   - inferior items (i.e. low quality items)
@@ -54,8 +55,14 @@ ItemDisplay[tbk NMAG]: tp tome%CONTINUE%
 ItemDisplay[ibk NMAG]: id tome%CONTINUE%
 ItemDisplay[(cx8 OR cx5)]: %GOLD%%NAME%
 // Handle socket information
-ItemDisplay[SOCK>0 ID]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
-ItemDisplay[SOCK=0 (EQ1 OR EQ2 OR EQ3 OR WP1 OR WP2 OR WP3 OR WP4 OR WP7 OR WP8 OR WP9 OR WP10 OR WP11 OR WP12 OR WP13) ID]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
+ItemDisplay[ID (7o7)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[3]%GRAY%}%CONTINUE%
+ItemDisplay[ID (7vo OR 7gs)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[4]%GRAY%}%CONTINUE%
+ItemDisplay[ID (7s8 OR 7pa OR 7bt OR 72a OR 7fb)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[5]%GRAY%}%CONTINUE%
+ItemDisplay[ID (7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[6]%GRAY%}%CONTINUE%
+
+ItemDisplay[SOCK>0 ID !(7o7 OR 7vo OR 7gs OR 7s8 OR 7pa OR 7bt OR 72a OR 7fb OR 7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm)]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
+
+ItemDisplay[SOCK=0 !(7o7 OR 7vo OR 7gs OR 7s8 OR 7pa OR 7bt OR 72a OR 7fb OR 7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm) (EQ1 OR EQ2 OR EQ3 OR WP1 OR WP2 OR WP3 OR WP4 OR WP7 OR WP8 OR WP9 OR WP10 OR WP11 OR WP12 OR WP13) ID]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
 // Handle prefixes (ethereal, superior)
 ItemDisplay[ETH SUP NMAG]: %GRAY%[%WHITE%e, s%GRAY%] %WHITE%%NAME%%CONTINUE%
 ItemDisplay[ETH !SUP NMAG]: %GRAY%[%WHITE%e%GRAY%] %WHITE%%NAME%%CONTINUE%
