@@ -249,16 +249,16 @@ ItemDisplay[(7tk OR 7bk OR 7ta) (MAG OR RARE OR NMAG) !ETH]: %GRAY%throw %TAN%[3
 // Health & Mana Potions
 ItemDisplay[rvl]: %PURPLE%R %WHITE%70%
 
-ItemDisplay[rvs CLVL<80]: %PURPLE%r %WHITE%35%
-ItemDisplay[rvs CLVL>80]:
-ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4) CLVL<80]: %RED%!%WHITE%Hp
-ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4) CLVL<80]: %BLUE%!%WHITE%Mp
-ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4) CLVL>80]:
-ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4) CLVL>80]:
+ItemDisplay[rvs CLVL<79]: %PURPLE%r %WHITE%35%
+ItemDisplay[rvs CLVL>79]:
 
-ItemDisplay[(hp5 OR mp5) CLVL>88]:
 ItemDisplay[hp5]: %RED%!%WHITE%Hp
 ItemDisplay[mp5]: %BLUE%!%WHITE%Mp
+
+ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4) CLVL>79]:
+ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4) CLVL>79]:
+ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4 OR hp5) CLVL<80]: %RED%!%WHITE%Hp
+ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4 OR hp5) CLVL<80]: %BLUE%!%WHITE%Mp
 
 //Utilites
 ItemDisplay[tsc]: %BLUE%°%GRAY%tp
