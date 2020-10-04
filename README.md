@@ -30,6 +30,14 @@ I tried to get rid of the superior prefix (replace it with "[s]"), but it made t
 |------------|-------------|
 | <a href="../newmedia/rw_demo.png?raw=true"><img src="../newmedia/rw_demo_small.png?raw=true" alt="Runeword demo"></a> | <a href="../newmedia/rw_demo2.png?raw=true"><img src="../newmedia/rw_demo2_small.png?raw=true" alt="Runeword demo 2"></a>
 
+| Rare demo      | eth socket item demo      |
+|------------|-------------|
+| <a href="../newmedia/rares.png?raw=true"><img src="../newmedia/rares_small.png?raw=true" alt="Rares demo"></a> | <a href="../newmedia/socket_eth_demo.png?raw=true"><img src="../newmedia/socket_eth_demo_small.png?raw=true" alt="Eth socket item demo"></a>
+
+| Set unique jewelry and ooc demo      |       |
+|------------|-------------|
+| <a href="../newmedia/set_unique_jewelry_and_ooc_demo.png?raw=true"><img src="../newmedia/set_unique_jewelry_and_ooc_demo_small.png?raw=true" alt="Set unique jewelry and ooc demo"></a> | 
+
 Enjoy,
 
 Ixoth (ixoth72 @ reddit)
