@@ -3,14 +3,25 @@ FIlter file for Path of Diablo
 
 # General
 
+This loot filter has following features:
+
+* All magical and rare items shows item level (in brackets)
+* Items are shown with [e], [s] or [e, s] suffix (if item is ethereal and/or superior)
+* Items with sockets are shown with socket count (in curly braces), some items show even max socket count as well (in brackets)
+* Orb of corruption, unique and set jewelry (unid) are clearly shown in ground with "pick it up" text
+* Runes are clearly shown (so they are not lost in ground)
+* Imbuable items (currently coronas are only supported) are shown in the ground
+* Normal Armors (which have enhanced armor class) are shown clearly in the ground
+* Some selected normal items with +3 skills are shown clearly in the ground
+
 This loot filter hides following things:
 
-* inferior items (i.e. low quality items)
-* potions (not full rejuv) after character level 80
-* blue normal and exceptional unid items (including arrows and bolts)
+* Inferior items (i.e. low quality items)
+* Potions (not full rejuv) after character level 80
+* Magical normal and exceptional unid items (including arrows and bolts)
 * all other items (not runeword, set or uniques) which are not matched by the filter (elite/normal/exceptional items which are neither weapons or armors)
-* id scrolls (after character level 80)
-* gold stacks based on character level
+* Id scrolls (after character level 80)
+* Gold stacks based on character level
 
 This filter (in some parts) is based on Kryszard's Loot Filter version 1.9. Credits goes to him/her on those respective parts of this filter).
 
