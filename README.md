@@ -3,12 +3,6 @@ FIlter file for Path of Diablo
 
 # General
 
-I have got some feedback about the filter, that if one is say corse-running back to one's corpse, and there is items on the way (which are hidden).. how easily one clicks still on those items, and then automatically equip those (if one has enough stats to do it).. if you die on the way then you'll bound to loose items.
-
-To avoid this, either logout and login to recover your corpse - or use in game option called **/nopickup** - which will essentially hide those black boxes from the hidden items in the ground. You can still pick items from the ground, but you need to press the default show items key first. Source: https://www.diabloii.net/forums/threads/disable-auto-equip.438852/
-
-**Remember this option carries over to other characters as well**
-
 This loot filter has following features:
 
 * All magical and rare items shows item level (in brackets)
