@@ -2,6 +2,7 @@
 FIlter file for Path of Diablo
 
 # General
+**There is few issues with the filter currently, which I'm been working on. Some items which are meant to be hidden are still dropping from monsters and are shown with blank name (when using show items in ground hot key). I try to get these issues sorted asap.**
 
 I have got some feedback about the filter, that if one is say corse-running back to one's corpse, and there is items on the way (which are hidden).. how easily one clicks still on those items, and then automatically equip those (if one has enough stats to do it).. if you die on the way then you'll bound to loose items.
 
