@@ -2,7 +2,6 @@
 FIlter file for Path of Diablo
 
 # General
-**There is few issues with the filter currently, which I'm been working on. Some items which are meant to be hidden are still dropping from monsters and are shown with blank name (when using show items in ground hot key). I try to get these issues sorted asap.**
 
 This filter file creation has taken quite lot of my personal time, if you wan't to help me keep this filter up to date also in future: 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=arsi.rantala@kolumbus.fi&lc=US&item_name=
