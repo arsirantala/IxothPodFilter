@@ -1,6 +1,6 @@
 // Ixoth's loot filter
-// Version 1.11
-// Last time updated: 1.10.2020
+// Version 1.12
+// Last time updated: 10.10.2020
 // Feedback on the filter: send message to ixoth72 @ reddit
 //
 // Release History:
@@ -22,6 +22,7 @@
 // 1.09 attempt to solve ui lag (when lot of items in the ground)
 // 1.10 add imbuables (this time only circlets)
 // 1.11 certain selected (2h) weapons show in brackets the max socket count
+// 1.12 quite lot of blank item labels issues should be now sorted (special thanks to Henry#9885 @ discord)
 //
 // - This loot filter hides following things:
 //   - inferior items (i.e. low quality items)
@@ -41,13 +42,13 @@
 ItemDisplay[INF]:
 
 // Runeword items (these need to be defined here, otherwise the runewords in the items were not shown by default)
-ItemDisplay[(ARMOR OR WEAPON) RW ETH SUP]: %GRAY%[%WHITE%e, s%GRAY%] %NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) RW ETH !SUP]: %GRAY%[%WHITE%e%GRAY%] %NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) RW !ETH SUP]: %GRAY%[%WHITE%s%GRAY%] %NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) RW]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) RW NORM]: %NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) RW EXC]: %NAME%%RED%*%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) RW ELT]: %NAME%%RED%**%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) RW ETH SUP]: %GRAY%[%WHITE%e, s%GRAY%] %NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) RW ETH !SUP]: %GRAY%[%WHITE%e%GRAY%] %NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) RW !ETH SUP]: %GRAY%[%WHITE%s%GRAY%] %NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) RW]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) RW NORM]: %NAME%
+ItemDisplay[(WEAPON OR ARMOR) RW EXC]: %NAME%%RED%*
+ItemDisplay[(WEAPON OR ARMOR) RW ELT]: %NAME%%RED%**
 // Utility
 ItemDisplay[cx8 NMAG]: ooe%TAN% <- pick it up%CONTINUE%
 ItemDisplay[cx5 NMAG]: ooc%TAN% <- pick it up%CONTINUE%
@@ -55,36 +56,35 @@ ItemDisplay[tbk NMAG]: tp tome%CONTINUE%
 ItemDisplay[ibk NMAG]: id tome%CONTINUE%
 ItemDisplay[(cx8 OR cx5)]: %GOLD%%NAME%
 // Handle socket information
-ItemDisplay[ID (7o7)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[3]%GRAY%}%CONTINUE%
+ItemDisplay[ID 7o7]: %NAME% %GRAY%{%WHITE%%SOCKETS%[3]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7vo OR 7gs)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[4]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7s8 OR 7pa OR 7bt OR 72a OR 7fb)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[5]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[6]%GRAY%}%CONTINUE%
-
 // Handle prefixes (ethereal, superior)
-ItemDisplay[(ARMOR OR WEAPON) ETH SUP NMAG]: %GRAY%[%WHITE%e, s%GRAY%] %WHITE%%NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) [ETH !SUP NMAG]: %GRAY%[%WHITE%e%GRAY%] %WHITE%%NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) [SUP !ETH NMAG]: %GRAY%[%WHITE%s%GRAY%] %WHITE%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) ETH SUP NMAG]: %GRAY%[%WHITE%e, s%GRAY%] %WHITE%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) ETH !SUP NMAG]: %GRAY%[%WHITE%e%GRAY%] %WHITE%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) SUP !ETH NMAG]: %GRAY%[%WHITE%s%GRAY%] %WHITE%%NAME%%CONTINUE%
 
-ItemDisplay[(ARMOR OR WEAPON) [ETH SUP RARE]: %GRAY%[%WHITE%e, s%GRAY%] %YELLOW%%NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) ETH !SUP RARE]: %GRAY%[%WHITE%e%GRAY%] %YELLOW%%NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) [SUP !ETH RARE]: %GRAY%[%WHITE%s%GRAY%] %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) ETH SUP RARE]: %GRAY%[%WHITE%e, s%GRAY%] %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) ETH !SUP RARE]: %GRAY%[%WHITE%e%GRAY%] %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) SUP !ETH RARE]: %GRAY%[%WHITE%s%GRAY%] %YELLOW%%NAME%%CONTINUE%
 
-ItemDisplay[(ARMOR OR WEAPON) ETH SUP MAG]: %GRAY%[%WHITE%e, s%GRAY%] %BLUE%%NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) ETH !SUP MAG]: %GRAY%[%WHITE%e%GRAY%] %BLUE%%NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) [SUP !ETH MAG]: %GRAY%[%WHITE%s%GRAY%] %BLUE%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) ETH SUP MAG]: %GRAY%[%WHITE%e, s%GRAY%] %BLUE%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) ETH !SUP MAG]: %GRAY%[%WHITE%e%GRAY%] %BLUE%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) SUP !ETH MAG]: %GRAY%[%WHITE%s%GRAY%] %BLUE%%NAME%%CONTINUE%
 
-ItemDisplay[(ARMOR OR WEAPON) ETH SUP UNI]: %GRAY%[%WHITE%e, s%GRAY%] %GOLD%%NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) ETH !SUP UNI]: %GRAY%[%WHITE%e%GRAY%] %GOLD%%NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) SUP !ETH UNI]: %GRAY%[%WHITE%s%GRAY%] %GOLD%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) ETH SUP UNI]: %GRAY%[%WHITE%e, s%GRAY%] %GOLD%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) ETH !SUP UNI]: %GRAY%[%WHITE%e%GRAY%] %GOLD%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) SUP !ETH UNI]: %GRAY%[%WHITE%s%GRAY%] %GOLD%%NAME%%CONTINUE%
 
-ItemDisplay[(ARMOR OR WEAPON) ETH SUP SET]: %GRAY%[%WHITE%e, s%GRAY%] %GREEN%%NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) ETH !SUP SET]: %GRAY%[%WHITE%e%GRAY%] %GREEN%%NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) !SUP ETH SET]: %GRAY%[%WHITE%s%GRAY%] %GREEN%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) ETH SUP SET]: %GRAY%[%WHITE%e, s%GRAY%] %GREEN%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) ETH !SUP SET]: %GRAY%[%WHITE%e%GRAY%] %GREEN%%NAME%%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) !SUP ETH SET]: %GRAY%[%WHITE%s%GRAY%] %GREEN%%NAME%%CONTINUE%
 // Handle item level information
-ItemDisplay[(ARMOR OR WEAPON) MAG OR RARE]: %NAME% %GRAY%[%WHITE%i%ILVL%%GRAY%]%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR OR jew OR amu OR rin) (MAG OR RARE OR UNI OR SET)]: %NAME% %GRAY%[%WHITE%i%ILVL%%GRAY%]%CONTINUE%
 // Handle the item tier (* for exceptional, ** for elite)
-ItemDisplay[(ARMOR OR WEAPON) EXC]: %NAME%%RED%*%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) ELT]: %NAME%%RED%**%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) EXC]: %NAME%%RED%*%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR) ELT]: %NAME%%RED%**%CONTINUE%
 
 // Armors
 // Elite armors with 500+ AC (show also 0 OS and superiors as they too can be made socketed with quest reward)
@@ -110,7 +110,7 @@ ItemDisplay[NMAG (7fb OR 7gd OR 7p7 OR 7m7 OR 7gm OR 72a OR 7wc OR 7vo OR 7o7 OR
 
 // 1H cryptic sword (seperated here as it can get only max 4 sockets)
 // ItemDisplay[NMAG (7ls) (SOCK=4) !RW !ETH]: %DGREEN%%NAME%
-ItemDisplay[NMAG (7ls) (SOCK=4) !RW ETH]: %GOLD%%NAME% %GOLD%<- HYPE
+ItemDisplay[NMAG 7ls SOCK=4 !RW ETH]: %GOLD%%NAME% %GOLD%<- HYPE
 
 // 2H weapons and 1h ettin axe, 1h berzerker axe, glorious axe
 // ItemDisplay[NMAG (7fb OR 7gd OR 7p7 OR 7m7 OR 7gm OR 7wc OR 7vo OR 7o7 OR 72a OR 7bt OR 7wa OR 7gi) (SOCK=5 OR SOCK=6) !RW !ETH]: %DGREEN%%NAME% %GOLD%<- HYPE
@@ -118,16 +118,16 @@ ItemDisplay[NMAG (7ls) (SOCK=4) !RW ETH]: %GOLD%%NAME% %GOLD%<- HYPE
 // ItemDisplay[NMAG (7fb OR 7gd OR 7p7 OR 7m7 OR 7gm OR 7wc OR 7vo OR 7o7 OR 72a OR 7bt OR 7wa OR 7gi) (SOCK=5 OR SOCK=6) !RW ETH]: CBlade%CONTINUE%
 ItemDisplay[NMAG (7fb OR 7gd OR 7p7 OR 7m7 OR 7gm OR 7wc OR 7vo OR 7o7 OR 72a OR 7bt OR 7wa OR 7gi) (SOCK=5 OR SOCK=6) !RW ETH]: %NAME% %GOLD%<- HYPE
 
-//RuneWord Bases (this is from Kryszard v1.9 filter (I did some simplifications of item filtering rules (Were unnecessarily eseretoric at times ;))
+//RuneWord Bases (this is from Kryszard v1.9 filter (I did some simplifications of item filtering rules were unnecessarily eseretoric at times ))
 //Spirit Swords
-ItemDisplay[(crs OR bsd OR lsd) (ETH  (NMAG OR RW)) SOCK=4]: %NAME%
+ItemDisplay[(crs OR bsd OR lsd) (ETH (NMAG OR RW)) SOCK=4]: %NAME%
 ItemDisplay[(crs OR bsd OR lsd) (NMAG OR RW) SOCK=4]: %NAME%
 //Holy Thunder/Rift
-ItemDisplay[wsp !ETH  (NMAG OR RW) SOCK=4]: %NAME%
+ItemDisplay[wsp !ETH (NMAG OR RW) SOCK=4]: %NAME%
 //HOTO AND CTA
-ItemDisplay[fla (ETH  (NMAG OR RW)) SOCK>3]: %NAME%
+ItemDisplay[fla (ETH (NMAG OR RW)) SOCK>3]: %NAME%
 ItemDisplay[fla (NMAG OR RW) SOCK>3]: %NAME%
-ItemDisplay[crs (ETH  (NMAG OR RW)) SOCK=5]: %NAME%
+ItemDisplay[crs (ETH (NMAG OR RW)) SOCK=5]: %NAME%
 ItemDisplay[crs (NMAG OR RW) SOCK=5]: %NAME%
 //White
 ItemDisplay[WP12 SK84>2 (SOCK=0 OR SOCK=2) (NMAG OR RW)]: %GRAY%[%WHITE%3bsr%GRAY%] %NAME%
@@ -145,7 +145,7 @@ ItemDisplay[6cb SOCK=4]: %NAME%
 //Infi/Insi/Pride and Obedience/Doom
 ItemDisplay[(7wc OR 7pa OR 7s8 OR 7vo OR 7h7 OR 7tr OR 7br OR 7st OR 7p7) (ETH (NMAG OR RW)) (SOCK=4 OR SOCK=5)]: %NAME%
 ItemDisplay[(7vo OR 7tr) ETH (NMAG OR RW) SOCK=0]: %NAME%
-ItemDisplay[(7wc OR 7pa OR 7s8 OR 7h7 OR 7br OR 7st) (ETH AND !SUP)  (NMAG OR RW) SOCK=0]: %NAME%
+ItemDisplay[(7wc OR 7pa OR 7s8 OR 7h7 OR 7br OR 7st) (ETH AND !SUP) (NMAG OR RW) SOCK=0]: %NAME%
 //Grief/Beast/Passion
 ItemDisplay[(7cr OR 7wa) (!ETH AND NMAG OR RW) (SOCK=4 OR SOCK=5)]: %NAME%
 ItemDisplay[(7cr OR 7wa) (!ETH AND !SUP) (NMAG OR RW) SOCK=0]: %GRAY%%NAME%
@@ -155,7 +155,7 @@ ItemDisplay[7fb ETH (NMAG OR RW) SOCK=0]: %NAME%
 ItemDisplay[(7wa OR 7gd) (ETH AND !SUP)  (NMAG OR RW) SOCK=0]: %NAME%
 //Breath of the Dying/Last Wish
 ItemDisplay[7cr (NMAG OR RW) (SOCK=0 OR SOCK=6)]: %NAME%
-ItemDisplay[(7wa OR 7gd OR 7p7) ETH  (NMAG OR RW) (SOCK=0 OR SOCK=6)]: %NAME%
+ItemDisplay[(7wa OR 7gd OR 7p7) ETH (NMAG OR RW) (SOCK=0 OR SOCK=6)]: %NAME%
 //Lawbringer
 ItemDisplay[72h ETH (NMAG OR RW) (SOCK=0 OR SOCK=3)]: %NAME%
 //Chaos
@@ -368,12 +368,4 @@ ItemDisplay[(ci0 OR ci1 OR ci2 OR ci3) NMAG SOCK=0]: %NAME% %GRAY%[%WHITE%i%ILVL
 // Added this fallback section, which you can enable if you wan't to collect say every elite item to be sold
 
 // This is a fallback section - all the interesting items should have been normally be identified by now
-
-// Show elite items as they're usually worth of some gold at least (show the item code's to help to refine the filter further)
-// ItemDisplay[NMAG (WEAPON OR ARMOR) !SET !UNI !RW ELT]: %GRAY%junk? %NAME% %GRAY%[%WHITE%%CODE%%GRAY%]
-// ItemDisplay[NMAG (WEAPON OR ARMOR) !SET !UNI !RW ELT]:
-
-// In general other non-magical weapon or armor items are not worth of not much interest (just to be sure never hide set, unique or runeword items)
-// ItemDisplay[NMAG (WEAPON OR ARMOR) !SET !UNI !RW]:
-
-// ItemDisplay[NMAG (WEAPON OR ARMOR) !ELT]:
+ItemDisplay[NMAG (WEAPON OR ARMOR) !ELT]:
