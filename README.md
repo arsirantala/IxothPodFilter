@@ -4,11 +4,9 @@ FIlter file for Path of Diablo
 # General
 **There is few issues with the filter currently, which I'm been working on. Some items which are meant to be hidden are still dropping from monsters and are shown with blank name (when using show items in ground hot key). I try to get these issues sorted asap.**
 
-I have got some feedback about the filter, that if one is say corse-running back to one's corpse, and there is items on the way (which are hidden).. how easily one clicks still on those items, and then automatically equip those (if one has enough stats to do it).. if you die on the way then you'll bound to loose items.
-
-To avoid this, either logout and login to recover your corpse - or use in game option called **/nopickup** - which will essentially hide those black boxes from the hidden items in the ground. You can still pick items from the ground, but you need to press the default show items key first. Source: https://www.diabloii.net/forums/threads/disable-auto-equip.438852/
-
-**Remember this option carries over to other characters as well**
+This filter file creation has taken quite lot of my personal time, if you wan't to help me keep this filter up to date also in future: 
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=arsi.rantala@kolumbus.fi&lc=US&item_name=
+ixoth_pod_item_filter&no_note=0&cn=&currency_code=EUR&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"></a>
 
 This loot filter has following features:
 
