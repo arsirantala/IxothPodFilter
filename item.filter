@@ -41,13 +41,13 @@
 ItemDisplay[INF]:
 
 // Runeword items (these need to be defined here, otherwise the runewords in the items were not shown by default)
-ItemDisplay[RW ETH SUP]: %GRAY%[%WHITE%e, s%GRAY%] %NAME%%CONTINUE%
-ItemDisplay[RW ETH !SUP]: %GRAY%[%WHITE%e%GRAY%] %NAME%%CONTINUE%
-ItemDisplay[RW !ETH SUP]: %GRAY%[%WHITE%s%GRAY%] %NAME%%CONTINUE%
-ItemDisplay[RW]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
-ItemDisplay[RW NORM]: %NAME%
-ItemDisplay[RW EXC]: %NAME%%RED%*
-ItemDisplay[RW ELT]: %NAME%%RED%**
+ItemDisplay[(ARMOR OR WEAPON) RW ETH SUP]: %GRAY%[%WHITE%e, s%GRAY%] %NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) RW ETH !SUP]: %GRAY%[%WHITE%e%GRAY%] %NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) RW !ETH SUP]: %GRAY%[%WHITE%s%GRAY%] %NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) RW]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) RW NORM]: %NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) RW EXC]: %NAME%%RED%*%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) RW ELT]: %NAME%%RED%**%CONTINUE%
 // Utility
 ItemDisplay[cx8 NMAG]: ooe%TAN% <- pick it up%CONTINUE%
 ItemDisplay[cx5 NMAG]: ooc%TAN% <- pick it up%CONTINUE%
@@ -55,39 +55,43 @@ ItemDisplay[tbk NMAG]: tp tome%CONTINUE%
 ItemDisplay[ibk NMAG]: id tome%CONTINUE%
 ItemDisplay[(cx8 OR cx5)]: %GOLD%%NAME%
 // Handle socket information
+// ItemDisplay[(ARMOR OR WEAPON) SOCK>0]: %CODE%%CONTINUE%
 ItemDisplay[ID (7o7)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[3]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7vo OR 7gs)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[4]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7s8 OR 7pa OR 7bt OR 72a OR 7fb)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[5]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[6]%GRAY%}%CONTINUE%
+ 
+ItemDisplay[SOCK>0 ID (7o7 OR 7vo OR 7gs OR 7s8 OR 7pa OR 7bt OR 72a OR 7fb OR 7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm)]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) SOCK>0 ID]:
 
-ItemDisplay[SOCK>0 ID !(7o7 OR 7vo OR 7gs OR 7s8 OR 7pa OR 7bt OR 72a OR 7fb OR 7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm)]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
-
-ItemDisplay[SOCK=0 !(7o7 OR 7vo OR 7gs OR 7s8 OR 7pa OR 7bt OR 72a OR 7fb OR 7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm) (EQ1 OR EQ2 OR EQ3 OR WP1 OR WP2 OR WP3 OR WP4 OR WP7 OR WP8 OR WP9 OR WP10 OR WP11 OR WP12 OR WP13) ID]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
+ItemDisplay[SOCK=0 ID (ARMOR OR WEAPON)]: %NAME% %GRAY% {%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) SOCK=0 ID]:
+ 
 // Handle prefixes (ethereal, superior)
-ItemDisplay[ETH SUP NMAG]: %GRAY%[%WHITE%e, s%GRAY%] %WHITE%%NAME%%CONTINUE%
-ItemDisplay[ETH !SUP NMAG]: %GRAY%[%WHITE%e%GRAY%] %WHITE%%NAME%%CONTINUE%
-ItemDisplay[SUP !ETH NMAG]: %GRAY%[%WHITE%s%GRAY%] %WHITE%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) ETH SUP NMAG]: %GRAY%[%WHITE%e, s%GRAY%] %WHITE%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) [ETH !SUP NMAG]: %GRAY%[%WHITE%e%GRAY%] %WHITE%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) [SUP !ETH NMAG]: %GRAY%[%WHITE%s%GRAY%] %WHITE%%NAME%%CONTINUE%
 
-ItemDisplay[ETH SUP RARE]: %GRAY%[%WHITE%e, s%GRAY%] %YELLOW%%NAME%%CONTINUE%
-ItemDisplay[ETH !SUP RARE]: %GRAY%[%WHITE%e%GRAY%] %YELLOW%%NAME%%CONTINUE%
-ItemDisplay[SUP !ETH RARE]: %GRAY%[%WHITE%s%GRAY%] %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) [ETH SUP RARE]: %GRAY%[%WHITE%e, s%GRAY%] %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) ETH !SUP RARE]: %GRAY%[%WHITE%e%GRAY%] %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) [SUP !ETH RARE]: %GRAY%[%WHITE%s%GRAY%] %YELLOW%%NAME%%CONTINUE%
 
-ItemDisplay[ETH SUP MAG]: %GRAY%[%WHITE%e, s%GRAY%] %BLUE%%NAME%%CONTINUE%
-ItemDisplay[ETH !SUP MAG]: %GRAY%[%WHITE%e%GRAY%] %BLUE%%NAME%%CONTINUE%
-ItemDisplay[SUP !ETH MAG]: %GRAY%[%WHITE%s%GRAY%] %BLUE%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) ETH SUP MAG]: %GRAY%[%WHITE%e, s%GRAY%] %BLUE%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) ETH !SUP MAG]: %GRAY%[%WHITE%e%GRAY%] %BLUE%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) [SUP !ETH MAG]: %GRAY%[%WHITE%s%GRAY%] %BLUE%%NAME%%CONTINUE%
 
-ItemDisplay[ETH SUP UNI]: %GRAY%[%WHITE%e, s%GRAY%] %GOLD%%NAME%%CONTINUE%
-ItemDisplay[ETH !SUP UNI]: %GRAY%[%WHITE%e%GRAY%] %GOLD%%NAME%%CONTINUE%
-ItemDisplay[SUP !ETH UNI]: %GRAY%[%WHITE%s%GRAY%] %GOLD%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) ETH SUP UNI]: %GRAY%[%WHITE%e, s%GRAY%] %GOLD%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) ETH !SUP UNI]: %GRAY%[%WHITE%e%GRAY%] %GOLD%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) SUP !ETH UNI]: %GRAY%[%WHITE%s%GRAY%] %GOLD%%NAME%%CONTINUE%
 
-ItemDisplay[ETH SUP SET]: %GRAY%[%WHITE%e, s%GRAY%] %GREEN%%NAME%%CONTINUE%
-ItemDisplay[ETH !SUP SET]: %GRAY%[%WHITE%e%GRAY%] %GREEN%%NAME%%CONTINUE%
-ItemDisplay[!SUP ETH SET]: %GRAY%[%WHITE%s%GRAY%] %GREEN%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) ETH SUP SET]: %GRAY%[%WHITE%e, s%GRAY%] %GREEN%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) ETH !SUP SET]: %GRAY%[%WHITE%e%GRAY%] %GREEN%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) !SUP ETH SET]: %GRAY%[%WHITE%s%GRAY%] %GREEN%%NAME%%CONTINUE%
 // Handle item level information
-ItemDisplay[MAG OR RARE]: %NAME% %GRAY%[%WHITE%i%ILVL%%GRAY%]%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) MAG OR RARE]: %NAME% %GRAY%[%WHITE%i%ILVL%%GRAY%]%CONTINUE%
 // Handle the item tier (* for exceptional, ** for elite)
-ItemDisplay[EXC]: %NAME%%RED%*%CONTINUE%
-ItemDisplay[ELT]: %NAME%%RED%**%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) EXC]: %NAME%%RED%*%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) ELT]: %NAME%%RED%**%CONTINUE%
 
 // Armors
 // Elite armors with 500+ AC (show also 0 OS and superiors as they too can be made socketed with quest reward)
@@ -348,7 +352,7 @@ ItemDisplay[jew MAG !ID]: %TAN%»%WHITE%» %BLUE%%NAME%%WHITE% «%TAN%«
 ItemDisplay[jew RARE !ID]: %TAN%»» %YELLOW%%NAME%%TAN% ««
 
 //Craftables
-ItemDisplay[(ARMOR OR WEAPON) !(NMAG OR MAG OR RARE OR SET OR UNI)]: %NAME%
+ItemDisplay[(ARMOR OR WEAPON) MAG)]: %NAME%
 ItemDisplay[uvg MAG]: %NAME% %RED%[nef]
 ItemDisplay[xtb MAG]: %NAME% %RED%[eth]
 ItemDisplay[xlg MAG CLVL<81]: %NAME% %PURPLE%[ort]
@@ -375,7 +379,9 @@ ItemDisplay[(ci0 OR ci1 OR ci2 OR ci3) NMAG SOCK=0]: %NAME% %GRAY%[%WHITE%i%ILVL
 
 // Show elite items as they're usually worth of some gold at least (show the item code's to help to refine the filter further)
 // ItemDisplay[NMAG (WEAPON OR ARMOR) !SET !UNI !RW ELT]: %GRAY%junk? %NAME% %GRAY%[%WHITE%%CODE%%GRAY%]
-ItemDisplay[NMAG (WEAPON OR ARMOR) !SET !UNI !RW ELT]:
+// ItemDisplay[NMAG (WEAPON OR ARMOR) !SET !UNI !RW ELT]:
 
 // In general other non-magical weapon or armor items are not worth of not much interest (just to be sure never hide set, unique or runeword items)
-ItemDisplay[NMAG (WEAPON OR ARMOR) !SET !UNI !RW]:
+// ItemDisplay[NMAG (WEAPON OR ARMOR) !SET !UNI !RW]:
+
+ItemDisplay[NMAG (WEAPON OR ARMOR) !ELT]:
