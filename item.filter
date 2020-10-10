@@ -55,18 +55,11 @@ ItemDisplay[tbk NMAG]: tp tome%CONTINUE%
 ItemDisplay[ibk NMAG]: id tome%CONTINUE%
 ItemDisplay[(cx8 OR cx5)]: %GOLD%%NAME%
 // Handle socket information
-// ItemDisplay[(ARMOR OR WEAPON) SOCK>0]: %CODE%%CONTINUE%
 ItemDisplay[ID (7o7)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[3]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7vo OR 7gs)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[4]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7s8 OR 7pa OR 7bt OR 72a OR 7fb)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[5]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[6]%GRAY%}%CONTINUE%
- 
-ItemDisplay[SOCK>0 ID (7o7 OR 7vo OR 7gs OR 7s8 OR 7pa OR 7bt OR 72a OR 7fb OR 7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm)]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) SOCK>0 ID]:
 
-ItemDisplay[SOCK=0 ID (ARMOR OR WEAPON)]: %NAME% %GRAY% {%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) SOCK=0 ID]:
- 
 // Handle prefixes (ethereal, superior)
 ItemDisplay[(ARMOR OR WEAPON) ETH SUP NMAG]: %GRAY%[%WHITE%e, s%GRAY%] %WHITE%%NAME%%CONTINUE%
 ItemDisplay[(ARMOR OR WEAPON) [ETH !SUP NMAG]: %GRAY%[%WHITE%e%GRAY%] %WHITE%%NAME%%CONTINUE%
@@ -352,7 +345,6 @@ ItemDisplay[jew MAG !ID]: %TAN%»%WHITE%» %BLUE%%NAME%%WHITE% «%TAN%«
 ItemDisplay[jew RARE !ID]: %TAN%»» %YELLOW%%NAME%%TAN% ««
 
 //Craftables
-ItemDisplay[(ARMOR OR WEAPON) MAG)]: %NAME%
 ItemDisplay[uvg MAG]: %NAME% %RED%[nef]
 ItemDisplay[xtb MAG]: %NAME% %RED%[eth]
 ItemDisplay[xlg MAG CLVL<81]: %NAME% %PURPLE%[ort]
@@ -384,4 +376,4 @@ ItemDisplay[(ci0 OR ci1 OR ci2 OR ci3) NMAG SOCK=0]: %NAME% %GRAY%[%WHITE%i%ILVL
 // In general other non-magical weapon or armor items are not worth of not much interest (just to be sure never hide set, unique or runeword items)
 // ItemDisplay[NMAG (WEAPON OR ARMOR) !SET !UNI !RW]:
 
-ItemDisplay[NMAG (WEAPON OR ARMOR) !ELT]:
+// ItemDisplay[NMAG (WEAPON OR ARMOR) !ELT]:
