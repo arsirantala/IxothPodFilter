@@ -41,6 +41,71 @@
 // Don't show low quality items
 ItemDisplay[INF]:
 
+// Don't show magical normal and exceptional unid weapons or armors (worthless in general, as this filter is aimed more to the end game)
+ItemDisplay[(WEAPON OR ARMOR) MAG !ELT !ID]:
+
+// Don't show normal superior or ethereal items elite items (excluding RW items) which can't be used in runewords
+ItemDisplay[NMAG !RW ELT (EQ4 OR EQ5 OR EQ6)]:
+// Don't show superior or ethereal items (normal or exceptional). This filter is aimed more to the end game
+ItemDisplay[(WEAPON OR ARMOR) !ELT NMAG !RW]:
+
+ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4) CLVL>79]:
+ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4) CLVL>79]:
+
+//Utilites
+ItemDisplay[tsc]: %BLUE%°%GRAY%tp
+ItemDisplay[isc CLVL<80]: %RED%°%GRAY%id
+// Hide id scrolls after lvl 80
+ItemDisplay[isc]:
+// Hide stamina potions after lvl 40
+ItemDisplay[vps CLVL<41]: %GREEN%!%WHITE%stamina
+ItemDisplay[vps CLVL>40]:
+// Hide thawing potions after lvl 60
+ItemDisplay[wms CLVL<61]: %GREEN%!%WHITE%thaw
+ItemDisplay[wms CLVL>60]:
+ItemDisplay[yps]: %GREEN%!%WHITE%a
+ItemDisplay[key]: %GRAY%key
+//Choking, Exploding, Fulminating, Oil, Rancid, Strangling, hide em after lvl 23
+ItemDisplay[(gpm OR opm OR opl OR ops OR gps OR gpl) CLVL>23]:
+ItemDisplay[rvs CLVL>79]:
+
+//Gold
+ItemDisplay[GOLD<100 CLVL<20]:
+ItemDisplay[GOLD<1000 (CLVL>19 AND CLVL<80)]:
+ItemDisplay[GOLD<5000 CLVL>79]:
+
+// Gems (do not show chipped if char is lvl 79 and higher)
+ItemDisplay[(gcv OR gcw OR gcg OR gcr OR gcb OR gcy OR skc) CLVL>79]:
+//Gems
+ItemDisplay[(gfv OR gfw OR gfg OR gfr OR gfb OR gfy OR skf) CLVL>40]:
+ItemDisplay[(gsv OR gsw OR gsg OR gsr OR gsb OR gsy OR sku) CLVL>80]:
+ItemDisplay[(gcv OR gcw OR gcg OR gcr OR gcb OR gcy OR skc) CLVL<19]: %NAME%
+ItemDisplay[(gcv OR gcw OR gcg OR gcr OR gcb OR gcy OR skc)]: %GRAY%chip
+// Modify these to your own focuses, I farm only following for now (skulls for map rerolling) -->
+ItemDisplay[gzv]:
+ItemDisplay[glw]:
+ItemDisplay[glg]:
+ItemDisplay[glr]:
+ItemDisplay[glb]:
+ItemDisplay[gly]:
+ItemDisplay[skl]: %WHITE%Skull %ORANGE%[%GRAY%O%ORANGE%]
+// <- Modify these to your own focuses
+ItemDisplay[gzv]: %WHITE%Amethyst %ORANGE%[%PURPLE%O%ORANGE%]
+ItemDisplay[glw]: %WHITE%Diamond %ORANGE%[%WHITE%O%ORANGE%]
+ItemDisplay[glg]: %WHITE%Emerald %ORANGE%[%GREEN%O%ORANGE%]
+ItemDisplay[glr]: %WHITE%Ruby %ORANGE%[%RED%O%ORANGE%]
+ItemDisplay[glb]: %WHITE%Sapphire %ORANGE%[%BLUE%O%ORANGE%]
+ItemDisplay[gly]: %WHITE%Topaz %ORANGE%[%YELLOW%O%ORANGE%]
+ItemDisplay[skl]: %WHITE%Skull %ORANGE%[%GRAY%O%ORANGE%]
+
+ItemDisplay[gpv]: %ORANGE%P %WHITE%Amethyst %ORANGE%[%PURPLE%O%ORANGE%]
+ItemDisplay[gpw]: %ORANGE%P %WHITE%Diamond %ORANGE%[%WHITE%O%ORANGE%]
+ItemDisplay[gpg]: %ORANGE%P %WHITE%Emerald %ORANGE%[%GREEN%O%ORANGE%]
+ItemDisplay[gpr]: %ORANGE%P %WHITE%Ruby %ORANGE%[%RED%O%ORANGE%]
+ItemDisplay[gpb]: %ORANGE%P %WHITE%Sapphire %ORANGE%[%BLUE%O%ORANGE%]
+ItemDisplay[gpy]: %ORANGE%P %WHITE%Topaz %ORANGE%[%YELLOW%O%ORANGE%]
+ItemDisplay[skz]: %ORANGE%P %WHITE%Skull %ORANGE%[%GRAY%O%ORANGE%]
+
 // Runeword items (these need to be defined here, otherwise the runewords in the items were not shown by default)
 ItemDisplay[(WEAPON OR ARMOR) RW ETH SUP]: %GRAY%[%WHITE%e, s%GRAY%] %NAME%%CONTINUE%
 ItemDisplay[(WEAPON OR ARMOR) RW ETH !SUP]: %GRAY%[%WHITE%e%GRAY%] %NAME%%CONTINUE%
@@ -60,6 +125,7 @@ ItemDisplay[ID 7o7]: %NAME% %GRAY%{%WHITE%%SOCKETS%[3]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7vo OR 7gs)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[4]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7s8 OR 7pa OR 7bt OR 72a OR 7fb)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[5]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[6]%GRAY%}%CONTINUE%
+ItemDisplay[ID !(7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm)]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
 // Handle prefixes (ethereal, superior)
 ItemDisplay[(WEAPON OR ARMOR) ETH SUP NMAG]: %GRAY%[%WHITE%e, s%GRAY%] %WHITE%%NAME%%CONTINUE%
 ItemDisplay[(WEAPON OR ARMOR) ETH !SUP NMAG]: %GRAY%[%WHITE%e%GRAY%] %WHITE%%NAME%%CONTINUE%
@@ -81,7 +147,7 @@ ItemDisplay[(WEAPON OR ARMOR) ETH SUP SET]: %GRAY%[%WHITE%e, s%GRAY%] %GREEN%%NA
 ItemDisplay[(WEAPON OR ARMOR) ETH !SUP SET]: %GRAY%[%WHITE%e%GRAY%] %GREEN%%NAME%%CONTINUE%
 ItemDisplay[(WEAPON OR ARMOR) !SUP ETH SET]: %GRAY%[%WHITE%s%GRAY%] %GREEN%%NAME%%CONTINUE%
 // Handle item level information
-ItemDisplay[(WEAPON OR ARMOR OR jew OR amu OR rin) (MAG OR RARE OR UNI OR SET)]: %NAME% %GRAY%[%WHITE%i%ILVL%%GRAY%]%CONTINUE%
+ItemDisplay[(WEAPON OR ARMOR OR jew OR amu OR rin OR cm1 OR cm2 OR cm3) (MAG OR RARE OR UNI OR SET)]: %NAME% %GRAY%[%WHITE%i%ILVL%%GRAY%]%CONTINUE%
 // Handle the item tier (* for exceptional, ** for elite)
 ItemDisplay[(WEAPON OR ARMOR) EXC]: %NAME%%RED%*%CONTINUE%
 ItemDisplay[(WEAPON OR ARMOR) ELT]: %NAME%%RED%**%CONTINUE%
@@ -213,12 +279,6 @@ ItemDisplay[r29 OR r33]: %PURPLE%»» »» »» »» %RED%%RUNENAME% %GREEN%[%RU
 ItemDisplay[r30]: %PURPLE%o==[]:::::::::::::::::> %RED%%RUNENAME% %GREEN%[%RUNENUM%]%PURPLE% <:::::::::::::::::[]==o
 ItemDisplay[r31]: %PURPLE%o==[]::::::::::::::::::::::::::::::::> %RED%%RUNENAME% %GREEN%[%RUNENUM%]%PURPLE% <::::::::::::::::::::::::::::::::[]==o
 
-// Magic weapons and armors
-
-// Don't show magic normal and exceptional unid items (worthless in general, as this filter is aimed more to the end game)
-ItemDisplay[(ARMOR OR WEAPON) MAG EXC !ID]:
-ItemDisplay[(ARMOR OR WEAPON) MAG NORM !ID]:
-
 // Hide magic bolts and arrows
 ItemDisplay[(cq2 OR aq2) MAG]:
 
@@ -232,14 +292,6 @@ ItemDisplay[(ARMOR OR WEAPON) RARE !ID]: %YELLOW%%NAME%
 ItemDisplay[jew MAG !ID]: %TAN%»%WHITE%» %BLUE%%NAME% «%TAN%«
 ItemDisplay[jew RARE !ID]: %TAN%»» %YELLOW%%NAME% %TAN% ««
 
-// Gems (do not show chipped if char is lvl 79 and higher)
-ItemDisplay[(gcv OR gcw OR gcg OR gcr OR gcb OR gcy OR skc) CLVL>79]:
-
-//Gold
-ItemDisplay[GOLD<100 CLVL<20]:
-ItemDisplay[GOLD<1000 (CLVL>19 AND CLVL<80)]:
-ItemDisplay[GOLD<5000 CLVL>79]:
-
 //Throws 35k+
 ItemDisplay[(7tk OR 7bk OR 7ta) (MAG OR RARE OR NMAG) !ETH]: %GRAY%throw %TAN%[35k]
 
@@ -247,31 +299,12 @@ ItemDisplay[(7tk OR 7bk OR 7ta) (MAG OR RARE OR NMAG) !ETH]: %GRAY%throw %TAN%[3
 ItemDisplay[rvl]: %PURPLE%R %WHITE%70%
 
 ItemDisplay[rvs CLVL<79]: %PURPLE%r %WHITE%35%
-ItemDisplay[rvs CLVL>79]:
 
 ItemDisplay[hp5]: %RED%!%WHITE%Hp
 ItemDisplay[mp5]: %BLUE%!%WHITE%Mp
 
-ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4) CLVL>79]:
-ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4) CLVL>79]:
 ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4 OR hp5) CLVL<80]: %RED%!%WHITE%Hp
 ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4 OR hp5) CLVL<80]: %BLUE%!%WHITE%Mp
-
-//Utilites
-ItemDisplay[tsc]: %BLUE%°%GRAY%tp
-ItemDisplay[isc CLVL<80]: %RED%°%GRAY%id
-// Hide id scrolls after lvl 80
-ItemDisplay[isc]:
-// Hide stamina potions after lvl 40
-ItemDisplay[vps CLVL<41]: %GREEN%!%WHITE%stamina
-ItemDisplay[vps CLVL>40]:
-// Hide thawing potions after lvl 60
-ItemDisplay[wms CLVL<61]: %GREEN%!%WHITE%thaw
-ItemDisplay[wms CLVL>60]:
-ItemDisplay[yps]: %GREEN%!%WHITE%a
-ItemDisplay[key]: %GRAY%key
-//Choking, Exploding, Fulminating, Oil, Rancid, Strangling, hide em after lvl 23
-ItemDisplay[(gpm OR opm OR opl OR ops OR gps OR gpl) CLVL>23]:
 
 //Essences
 ItemDisplay[tes]: %NAME% %GRAY%[Andariel]
@@ -290,36 +323,6 @@ ItemDisplay[ma1 OR ma2 OR ma3 OR ma4 OR ma5 OR ma6 OR ma7 OR ma8 OR ma9 OR ma10 
 
 //Wirt Leg
 ItemDisplay[leg]: %NAME%
-
-//Gems
-ItemDisplay[(gfv OR gfw OR gfg OR gfr OR gfb OR gfy OR skf) CLVL>40]:
-ItemDisplay[(gsv OR gsw OR gsg OR gsr OR gsb OR gsy OR sku) CLVL>80]:
-ItemDisplay[(gcv OR gcw OR gcg OR gcr OR gcb OR gcy OR skc) CLVL<19]: %NAME%
-ItemDisplay[(gcv OR gcw OR gcg OR gcr OR gcb OR gcy OR skc)]: %GRAY%chip
-// Modify these to your own focuses, I farm only following for now (skulls for map rerolling) -->
-ItemDisplay[gzv]:
-ItemDisplay[glw]:
-ItemDisplay[glg]:
-ItemDisplay[glr]:
-ItemDisplay[glb]:
-ItemDisplay[gly]:
-ItemDisplay[skl]: %WHITE%Skull %ORANGE%[%GRAY%O%ORANGE%]
-// <- Modify these to your own focuses
-ItemDisplay[gzv]: %WHITE%Amethyst %ORANGE%[%PURPLE%O%ORANGE%]
-ItemDisplay[glw]: %WHITE%Diamond %ORANGE%[%WHITE%O%ORANGE%]
-ItemDisplay[glg]: %WHITE%Emerald %ORANGE%[%GREEN%O%ORANGE%]
-ItemDisplay[glr]: %WHITE%Ruby %ORANGE%[%RED%O%ORANGE%]
-ItemDisplay[glb]: %WHITE%Sapphire %ORANGE%[%BLUE%O%ORANGE%]
-ItemDisplay[gly]: %WHITE%Topaz %ORANGE%[%YELLOW%O%ORANGE%]
-ItemDisplay[skl]: %WHITE%Skull %ORANGE%[%GRAY%O%ORANGE%]
-
-ItemDisplay[gpv]: %ORANGE%P %WHITE%Amethyst %ORANGE%[%PURPLE%O%ORANGE%]
-ItemDisplay[gpw]: %ORANGE%P %WHITE%Diamond %ORANGE%[%WHITE%O%ORANGE%]
-ItemDisplay[gpg]: %ORANGE%P %WHITE%Emerald %ORANGE%[%GREEN%O%ORANGE%]
-ItemDisplay[gpr]: %ORANGE%P %WHITE%Ruby %ORANGE%[%RED%O%ORANGE%]
-ItemDisplay[gpb]: %ORANGE%P %WHITE%Sapphire %ORANGE%[%BLUE%O%ORANGE%]
-ItemDisplay[gpy]: %ORANGE%P %WHITE%Topaz %ORANGE%[%YELLOW%O%ORANGE%]
-ItemDisplay[skz]: %ORANGE%P %WHITE%Skull %ORANGE%[%GRAY%O%ORANGE%]
 
 //All Charms
 ItemDisplay[cm3 !ID ILVL>90]: %NAME% %PURPLE%°°°°
@@ -364,8 +367,3 @@ ItemDisplay[WP13 (TABSK24>2 AND SK119>2)]: %RED%»» »» »» %GREEN%FoH Scepte
 
 // Imbuables
 ItemDisplay[(ci0 OR ci1 OR ci2 OR ci3) NMAG SOCK=0]: %NAME% %GRAY%[%WHITE%i%ILVL%%GRAY%] %TAN%-> Imbue it at Charsi
-
-// Added this fallback section, which you can enable if you wan't to collect say every elite item to be sold
-
-// This is a fallback section - all the interesting items should have been normally be identified by now
-ItemDisplay[NMAG (WEAPON OR ARMOR) !ELT]:
