@@ -125,7 +125,7 @@ ItemDisplay[ID 7o7]: %NAME% %GRAY%{%WHITE%%SOCKETS%[3]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7vo OR 7gs)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[4]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7s8 OR 7pa OR 7bt OR 72a OR 7fb)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[5]%GRAY%}%CONTINUE%
 ItemDisplay[ID (7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm)]: %NAME% %GRAY%{%WHITE%%SOCKETS%[6]%GRAY%}%CONTINUE%
-ItemDisplay[ID !(7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm OR EQ4 OR EQ5 OR EQ6 OR cm1 OR cm2 OR cm3)]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
+ItemDisplay[ID !(7h7 OR 7wc OR 7ga OR 7gi OR 7wa OR 7mp OR 7st OR 7p7 OR 7gd OR 7m7 OR 7gm OR EQ4 OR EQ5 OR EQ6 OR cm1 OR cm2 OR cm3 OR jew OR rin OR amu)]: %NAME% %GRAY%{%WHITE%%SOCKETS%%GRAY%}%CONTINUE%
 // Handle prefixes (ethereal, superior)
 ItemDisplay[(WEAPON OR ARMOR) ETH SUP NMAG]: %GRAY%[%WHITE%e, s%GRAY%] %WHITE%%NAME%%CONTINUE%
 ItemDisplay[(WEAPON OR ARMOR) ETH !SUP NMAG]: %GRAY%[%WHITE%e%GRAY%] %WHITE%%NAME%%CONTINUE%
