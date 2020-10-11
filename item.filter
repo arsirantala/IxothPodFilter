@@ -41,6 +41,7 @@ ItemDisplay[(gpm OR opm OR opl OR ops OR gps OR gpl) CLVL>23]:
 // Small rejuvation potions after level 80
 ItemDisplay[rvs CLVL>79]:
 //Gold
+ItemDisplay[GOLD<4999 CLVL>79]:
 ItemDisplay[GOLD>4999 CLVL>79]:%NAME%
 // Gems (do not show chipped if char is lvl 79 and higher)
 ItemDisplay[(gcv OR gcw OR gcg OR gcr OR gcb OR gcy OR skc) CLVL>79]:
