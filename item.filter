@@ -292,12 +292,9 @@ ItemDisplay[cm1 OR cm2 OR cm3]: %NAME%
 ItemDisplay[amu SET !ID]: %GREEN%Tal rasha's amulet? %TAN%<- pick it up
 ItemDisplay[rin UNI !ID]: %GOLD%unique ring %TAN%<- pick it up
 ItemDisplay[amu UNI !ID]: %GOLD%unique amulet %TAN%<- pick it up
-ItemDisplay[rin RARE !ID]: %TAN%»» %YELLOW%%NAME%%TAN% ««
-ItemDisplay[amu RARE !ID]: %TAN%»» %YELLOW%%NAME%%TAN% ««
-ItemDisplay[rin MAG ILVL>90]: %NAME% %WHITE%%GRAY%[%WHITE%i%ILVL%%GRAY%]
-ItemDisplay[amu MAG ILVL>90]: %NAME% %WHITE%%GRAY%[%WHITE%i%ILVL%%GRAY%]
-ItemDisplay[rin MAG]: %NAME%
-ItemDisplay[amu MAG]: %NAME%
+ItemDisplay[(rin OR amu) RARE !ID]: %TAN%»» %YELLOW%%NAME%%TAN% ««
+ItemDisplay[(rin OR amu) MAG ILVL>90]: %NAME% %WHITE%%GRAY%[%WHITE%i%ILVL%%GRAY%]
+ItemDisplay[(rin OR amu) MAG]: %NAME%
 // Jewels
 ItemDisplay[jew MAG !ID]: %TAN%»%WHITE%» %BLUE%%NAME%%WHITE% «%TAN%«
 ItemDisplay[jew RARE !ID]: %TAN%»» %YELLOW%%NAME%%TAN% ««
