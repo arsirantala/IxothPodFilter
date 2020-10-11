@@ -27,8 +27,7 @@ ItemDisplay[NMAG !RW ELT (EQ4 OR EQ5 OR EQ6) !leg]:
 // Don't show superior or ethereal items (normal or exceptional)
 ItemDisplay[(WEAPON OR ARMOR) !ELT NMAG !RW !leg]:
 // Hide lower quality healing and mana potions afte level 80
-ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4) CLVL>79]:
-ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4) CLVL>79]:
+ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4 OR mp1 OR mp2 OR mp3 OR mp4) CLVL>79]:
 // Hide id scrolls after lvl 80
 ItemDisplay[isc]:
 // Hide stamina potions after lvl 40
@@ -42,9 +41,7 @@ ItemDisplay[(gpm OR opm OR opl OR ops OR gps OR gpl) CLVL>23]:
 // Small rejuvation potions after level 80
 ItemDisplay[rvs CLVL>79]:
 //Gold
-ItemDisplay[GOLD<100 CLVL<20]:
-ItemDisplay[GOLD<1000 (CLVL>19 AND CLVL<80)]:
-ItemDisplay[GOLD<5000 CLVL>79]:
+ItemDisplay[GOLD>4999 CLVL>79]:%NAME%
 // Gems (do not show chipped if char is lvl 79 and higher)
 ItemDisplay[(gcv OR gcw OR gcg OR gcr OR gcb OR gcy OR skc) CLVL>79]:
 //Gems
@@ -59,6 +56,14 @@ ItemDisplay[tsc]: %BLUE%°%GRAY%tp
 ItemDisplay[isc CLVL<80]: %RED%°%GRAY%id
 ItemDisplay[yps]: %GREEN%!%WHITE%a
 ItemDisplay[key]: %GRAY%key
+
+// "`-._,-'"`-._,-'"`-._,-'"`-._,-' Health & Mana Potions "`-._,-'"`-._,-'"`-._,-'"`-._,-' 
+ItemDisplay[rvl]: %PURPLE%R %WHITE%70%
+ItemDisplay[rvs CLVL<79]: %PURPLE%r %WHITE%35%
+ItemDisplay[hp5]: %RED%!%WHITE%Hp
+ItemDisplay[mp5]: %BLUE%!%WHITE%Mp
+ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4 OR hp5) CLVL<80]: %RED%!%WHITE%Hp
+ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4 OR hp5) CLVL<80]: %BLUE%!%WHITE%Mp
 
 // "`-._,-'"`-._,-'"`-._,-'"`-._,-' Gems -> "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 ItemDisplay[(gcv OR gcw OR gcg OR gcr OR gcb OR gcy OR skc) CLVL<19]: %NAME%
@@ -97,10 +102,10 @@ ItemDisplay[(WEAPON OR ARMOR) RW NORM]: %NAME%
 ItemDisplay[(WEAPON OR ARMOR) RW EXC]: %NAME%%RED%*
 ItemDisplay[(WEAPON OR ARMOR) RW ELT]: %NAME%%RED%**
 // "`-._,-'"`-._,-'"`-._,-'"`-._,-' Utility "`-._,-'"`-._,-'"`-._,-'"`-._,-'
-ItemDisplay[cx8 NMAG]: ooe%TAN% <- pick it up%CONTINUE%
-ItemDisplay[cx5 NMAG]: ooc%TAN% <- pick it up%CONTINUE%
-ItemDisplay[tbk NMAG]: tp tome%CONTINUE%
-ItemDisplay[ibk NMAG]: id tome%CONTINUE%
+ItemDisplay[cx8]: ooe%TAN% <- pick it up%CONTINUE%
+ItemDisplay[cx5]: ooc%TAN% <- pick it up%CONTINUE%
+ItemDisplay[tbk]: tp tome%CONTINUE%
+ItemDisplay[ibk]: id tome%CONTINUE%
 ItemDisplay[(cx8 OR cx5)]: %GOLD%%NAME%
 // "`-._,-'"`-._,-'"`-._,-'"`-._,-' Socket information "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 ItemDisplay[ID 7o7]: %NAME% %GRAY%{%WHITE%%SOCKETS%[3]%GRAY%}%CONTINUE%
@@ -261,13 +266,6 @@ ItemDisplay[jew MAG !ID]: %TAN%»%WHITE%» %BLUE%%NAME% «%TAN%«
 ItemDisplay[jew RARE !ID]: %TAN%»» %YELLOW%%NAME% %TAN% ««
 // Throws 35k+
 ItemDisplay[(7tk OR 7bk OR 7ta) (MAG OR RARE OR NMAG) !ETH]: %GRAY%throw %TAN%[35k]
-// Health & Mana Potions
-ItemDisplay[rvl]: %PURPLE%R %WHITE%70%
-ItemDisplay[rvs CLVL<79]: %PURPLE%r %WHITE%35%
-ItemDisplay[hp5]: %RED%!%WHITE%Hp
-ItemDisplay[mp5]: %BLUE%!%WHITE%Mp
-ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4 OR hp5) CLVL<80]: %RED%!%WHITE%Hp
-ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4 OR hp5) CLVL<80]: %BLUE%!%WHITE%Mp
 // Essences
 ItemDisplay[tes]: %NAME% %GRAY%[Andariel]
 ItemDisplay[ceh]: %NAME% %GRAY%[Mephisto]
@@ -321,4 +319,4 @@ ItemDisplay[WP13 (TABSK24>2 AND SK119>2)]: %RED%»» »» »» %GREEN%FoH Scepte
 
 // "`-._,-'"`-._,-'"`-._,-'"`-._,-' Imbuables "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 // (while any non-magical item which has no sockets and is weapon or armor (even ethereal) can be imbued, I chose coronas the be shown only below)
-ItemDisplay[(ci0 OR ci1 OR ci2 OR ci3) NMAG SOCK=0]: %NAME% %GRAY%[%WHITE%i%ILVL%%GRAY%] %TAN%-> Imbue it at Charsi
+ItemDisplay[ci3 NMAG SOCK=0]: %NAME% %GRAY%[%WHITE%i%ILVL%%GRAY%] %TAN%-> Imbue it at Charsi
