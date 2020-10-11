@@ -19,14 +19,14 @@
 
 // "`-._,-'"`-._,-'"`-._,-'"`-._,-' Hide items section -> "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 // Don't show low quality items
-ItemDisplay[INF]:
+ItemDisplay[INF !leg]:
 // Don't show magical normal and exceptional unid weapons or armors (worthless in general (this filter is aimed more to the end game)
-ItemDisplay[(WEAPON OR ARMOR) MAG !ELT !ID]:
+ItemDisplay[(WEAPON OR ARMOR) MAG !ELT !ID !leg]:
 // Don't show normal superior or ethereal elite items (excluding RW items) which can't be used in runewords
-ItemDisplay[NMAG !RW ELT (EQ4 OR EQ5 OR EQ6)]:
+ItemDisplay[NMAG !RW ELT (EQ4 OR EQ5 OR EQ6) !leg]:
 // Don't show superior or ethereal items (normal or exceptional)
-ItemDisplay[(WEAPON OR ARMOR) !ELT NMAG !RW]:
-// Hide lower quality healing and mana potiosn afte level 80
+ItemDisplay[(WEAPON OR ARMOR) !ELT NMAG !RW !leg]:
+// Hide lower quality healing and mana potions afte level 80
 ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4) CLVL>79]:
 ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4) CLVL>79]:
 // Hide id scrolls after lvl 80
