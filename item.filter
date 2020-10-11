@@ -17,6 +17,18 @@
 // Notes:
 // - It was not possible to get rid of superior text (on superior quality item), to replace superior with [s]. Feature request has been issued to the respective ppl of POD team, but such feature (that quality of superior could be replaced with custom text) will never likely happen.
 
+// "`-._,-'"`-._,-'"`-._,-'"`-._,-' Very common items section "`-._,-'"`-._,-'"`-._,-'"`-._,-'
+ItemDisplay[tsc]: %BLUE%°%GRAY%tp
+ItemDisplay[isc CLVL<80]: %RED%°%GRAY%id
+ItemDisplay[yps]: %GREEN%!%WHITE%a
+ItemDisplay[key]: %GRAY%key
+ItemDisplay[rvl]: %PURPLE%R %WHITE%70%
+ItemDisplay[rvs CLVL<79]: %PURPLE%r %WHITE%35%
+ItemDisplay[hp5 CLVL>79]: %RED%!%WHITE%Hp
+ItemDisplay[mp5 CLVL>79]: %BLUE%!%WHITE%Mp
+ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4 OR hp5) CLVL<80]: %RED%!%WHITE%Hp
+ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4 OR hp5) CLVL<80]: %BLUE%!%WHITE%Mp
+
 // "`-._,-'"`-._,-'"`-._,-'"`-._,-' Hide items section -> "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 // Don't show low quality items
 ItemDisplay[INF !leg]:
@@ -29,7 +41,7 @@ ItemDisplay[(WEAPON OR ARMOR) !ELT NMAG !RW !leg]:
 // Hide lower quality healing and mana potions afte level 80
 ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4 OR mp1 OR mp2 OR mp3 OR mp4) CLVL>79]:
 // Hide id scrolls after lvl 80
-ItemDisplay[isc]:
+ItemDisplay[isc CLVL>79]:
 // Hide stamina potions after lvl 40
 ItemDisplay[vps CLVL<41]: %GREEN%!%WHITE%stamina
 ItemDisplay[vps CLVL>40]:
@@ -42,33 +54,14 @@ ItemDisplay[(gpm OR opm OR opl OR ops OR gps OR gpl) CLVL>23]:
 ItemDisplay[rvs CLVL>79]:
 //Gold
 ItemDisplay[GOLD<4999 CLVL>79]:
-ItemDisplay[GOLD>4999 CLVL>79]:%NAME%
+ItemDisplay[GOLD>4999 CLVL>79]: %NAME%
 // Gems (do not show chipped if char is lvl 79 and higher)
 ItemDisplay[(gcv OR gcw OR gcg OR gcr OR gcb OR gcy OR skc) CLVL>79]:
 //Gems
 ItemDisplay[(gfv OR gfw OR gfg OR gfr OR gfb OR gfy OR skf) CLVL>40]:
-ItemDisplay[(gsv OR gsw OR gsg OR gsr OR gsb OR gsy OR sku) CLVL>80]:
+ItemDisplay[(gsv OR gsw OR gsg OR gsr OR gsb OR gsy OR sku) CLVL>79]:
 // Hide magic bolts and arrows
 ItemDisplay[(cq2 OR aq2) MAG]:
-// "`-._,-'"`-._,-'"`-._,-'"`-._,-' <- Hide items section "`-._,-'"`-._,-'"`-._,-'"`-._,-'
-
-// "`-._,-'"`-._,-'"`-._,-'"`-._,-' Utilites "`-._,-'"`-._,-'"`-._,-'"`-._,-'
-ItemDisplay[tsc]: %BLUE%°%GRAY%tp
-ItemDisplay[isc CLVL<80]: %RED%°%GRAY%id
-ItemDisplay[yps]: %GREEN%!%WHITE%a
-ItemDisplay[key]: %GRAY%key
-
-// "`-._,-'"`-._,-'"`-._,-'"`-._,-' Health & Mana Potions "`-._,-'"`-._,-'"`-._,-'"`-._,-' 
-ItemDisplay[rvl]: %PURPLE%R %WHITE%70%
-ItemDisplay[rvs CLVL<79]: %PURPLE%r %WHITE%35%
-ItemDisplay[hp5]: %RED%!%WHITE%Hp
-ItemDisplay[mp5]: %BLUE%!%WHITE%Mp
-ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4 OR hp5) CLVL<80]: %RED%!%WHITE%Hp
-ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4 OR hp5) CLVL<80]: %BLUE%!%WHITE%Mp
-
-// "`-._,-'"`-._,-'"`-._,-'"`-._,-' Gems -> "`-._,-'"`-._,-'"`-._,-'"`-._,-'
-ItemDisplay[(gcv OR gcw OR gcg OR gcr OR gcb OR gcy OR skc) CLVL<19]: %NAME%
-ItemDisplay[(gcv OR gcw OR gcg OR gcr OR gcb OR gcy OR skc)]: %GRAY%chip
 // Modify these to your own focuses, I farm only following for now (skulls for map rerolling). You can enable this with scripts/enable_gems.sh script as well! -->
 ItemDisplay[gzv]:
 ItemDisplay[glw]:
@@ -78,6 +71,11 @@ ItemDisplay[glb]:
 ItemDisplay[gly]:
 ItemDisplay[skl]: %WHITE%Skull %ORANGE%[%GRAY%O%ORANGE%]
 // <- Modify these to your own focuses
+// "`-._,-'"`-._,-'"`-._,-'"`-._,-' <- Hide items section "`-._,-'"`-._,-'"`-._,-'"`-._,-'
+
+// "`-._,-'"`-._,-'"`-._,-'"`-._,-' Gems -> "`-._,-'"`-._,-'"`-._,-'"`-._,-'
+ItemDisplay[(gcv OR gcw OR gcg OR gcr OR gcb OR gcy OR skc) CLVL<19]: %NAME%
+ItemDisplay[(gcv OR gcw OR gcg OR gcr OR gcb OR gcy OR skc)]: %GRAY%chip
 ItemDisplay[gzv]: %WHITE%Amethyst %ORANGE%[%PURPLE%O%ORANGE%]
 ItemDisplay[glw]: %WHITE%Diamond %ORANGE%[%WHITE%O%ORANGE%]
 ItemDisplay[glg]: %WHITE%Emerald %ORANGE%[%GREEN%O%ORANGE%]
