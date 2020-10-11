@@ -10,7 +10,7 @@
 // - Blue normal and exceptional unid items (including arrows and bolts)
 // - All other items (not runeword, set or uniques) which are not matched by the filter (elite/normal/exceptional items which are not weapons or armors)
 // - Id scrolls after level 80
-// - Small gold stacks are hidden (this starts after level 20)
+// - Small gold stacks (under 5k) are hidden (this starts after level 80)
 //
 // items with +3 skills section (and some other things such as runes and gems) below are based on Kryszard's Loot Filter ver 1.9 (credits on those sections goes to him/her)
 //
