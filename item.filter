@@ -15,7 +15,7 @@
 // items with +3 skills section (and some other things such as runes and gems) below are based on Kryszard's Loot Filter ver 1.9 (credits on those sections goes to him/her)
 //
 // Notes:
-// - It was not possible to get rid of superior text (on superior quality item), to replace superior with [s]). Feature request has been issued to the respective ppl of POD team, but such feature (that quality of superior could be replaced with custom text) will never likely happen.
+// - It was not possible to get rid of superior text (on superior quality item), to replace superior with [s]. Feature request has been issued to the respective ppl of POD team, but such feature (that quality of superior could be replaced with custom text) will never likely happen.
 
 // "`-._,-'"`-._,-'"`-._,-'"`-._,-' Hide items section -> "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 // Don't show low quality items
