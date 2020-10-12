@@ -25,7 +25,10 @@ This loot filter hides following things:
 * Magical normal and exceptional unid items (including arrows and bolts)
 * all other items (not runeword, set or uniques) which are not matched by the filter (elite/normal/exceptional items which are neither weapons or armors)
 * Id scrolls (after character level 80)
-* Small gold stacks (based on character level)
+* Small gold stacks (under 5k) are hidden (after level 80)
+* Ethereal belts, boots and gloves
+* Weapons and armor with 1 socket
+
 
 This filter (in some parts) is based on Kryszard's Loot Filter version 1.9. Credits goes to him/her on those respective parts of this filter).
 
