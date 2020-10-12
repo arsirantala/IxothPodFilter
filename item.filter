@@ -267,7 +267,6 @@ ItemDisplay[r28]: %PURPLE%»» »» »» »» »» »» %RED%%RUNENAME% %GREEN%[
 ItemDisplay[r29 OR r33]: %PURPLE%»» »» »» »» %RED%%RUNENAME% %GREEN%[%RUNENUM%]%PURPLE% «« «« «« ««
 ItemDisplay[r30]: %PURPLE%o==[]:::::::::::::::::> %RED%%RUNENAME% %GREEN%[%RUNENUM%]%PURPLE% <:::::::::::::::::[]==o
 ItemDisplay[r31]: %PURPLE%o==[]::::::::::::::::::::::::::::::::> %RED%%RUNENAME% %GREEN%[%RUNENUM%]%PURPLE% <::::::::::::::::::::::::::::::::[]==o
-ItemDisplay[(ARMOR OR WEAPON) MAG !ID]: %BLUE%%NAME%
 ItemDisplay[(ARMOR OR WEAPON) MAG]: %BLUE%%NAME%
 // Rare weapons and armors
 ItemDisplay[(ARMOR OR WEAPON) RARE !ID]: %YELLOW%%NAME%
