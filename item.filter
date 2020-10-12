@@ -1,9 +1,18 @@
 // Ixoth's POD item loot filter
 // "`-._,-'"`-._,-'"`-._,-'"`-.
 // Version 1.13
-// Last time updated: 11.10.2020
+// Last time updated: 12.10.2020
 // Feedback on the filter: send message to ixoth72 @ reddit, or Ixoth#1431 @ discord
 //
+// This loot filter has following features:
+// - All magical and rare items shows item level (in brackets)
+// - Items are shown with [e], [s] or [e, s] suffix (if item is ethereal and/or superior)
+// - Items with sockets are shown with socket count (in curly braces), some items show even max socket count as well (in brackets)
+// - Orb of corruption, unique and set jewelry (unid) are clearly shown in ground with "pick it up" text
+// - Runes are clearly shown (so they are not lost in ground)
+// - Imbuable items (currently coronas are only supported) are shown in the ground
+// - Normal Armors (which have enhanced armor class) are shown clearly in the ground
+// - Some selected normal items with +3 skills are shown clearly in the ground
 // This loot filter hides following things:
 // - Inferior items (i.e. low quality items)
 // - Potions (not full rejuv, nor best healing or mana potions) after level 80
