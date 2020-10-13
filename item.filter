@@ -86,6 +86,16 @@ ItemDisplay[glb]:
 ItemDisplay[gly]:
 ItemDisplay[skl]: %WHITE%Skull %ORANGE%[%GRAY%O%ORANGE%]
 // <- Modify these to your own focuses
+// Hide regular bows/xbows without +3 amazon bow & crossbow skills
+ItemDisplay[(WP9 OR WP10) NMAG TABSK0<3]:
+// Hide regular paladin shields without ED less than 60 or all res of 40+
+ItemDisplay[CL3 NMAG (RES<40 AND ITEMSTAT17<60)]:
+// Hide regular necro heads (without proper skills)
+ItemDisplay[CL4 NMAG (SK74<3 AND SK80<3 AND SK70<3 AND SK69<3 AND SK67<3 AND SK83<3 AND SK84<3 AND SK92<3 AND SK74<2 AND SK93<3 AND SK91<3 AND SK87<3 AND SK86<3 AND SK82<3 AND SK81<3 AND SK77<3 AND SK76<3 AND SK78<3 AND SK95<3 AND SK94<3 AND SK90<3 AND SK85<3)]:
+// Hide regular druid pelts (without proper skills)
+ItemDisplay[CL1 NMAG (SK244<3 AND SK249<3 AND SK250<3 AND SK240<3 AND SK245<3 AND SK237<3 AND SK247<3 AND SK227<3 AND SK243<3 AND SK238<3 AND SK239<3 AND SK221<3 AND SK221<2 AND SK221<1 AND SK225<3 AND SK225<2 AND SK225<1 AND SK246<3 AND SK236<3 AND SK248<3 AND SK242<3 AND SK233<3 AND SK232<3 AND SK235<3)]:
+// Hide regular barbarian helms (without proper skills)
+ItemDisplay[CL2 NMAG (SK154<3 AND SK149<3 AND SK154<1 AND SK149<1 AND SK153<1 AND SK150<1 AND SK142<1 AND SK138<1 AND SK151<3 AND SK143<3 AND SK139<3 AND SK144<3 AND SK147<3 AND SK148<3 AND SK145<3 AND SK141<3 AND SK155<3 AND SK146<3 AND SK137<3)]:
 // "`-._,-'"`-._,-'"`-._,-'"`-._,-' <- Hide items section "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 
 // "`-._,-'"`-._,-'"`-._,-'"`-._,-' Gems -> "`-._,-'"`-._,-'"`-._,-'"`-._,-'
