@@ -1,7 +1,7 @@
 // Ixoth's POD item loot filter
 // "`-._,-'"`-._,-'"`-._,-'"`-.
 // Version 1.13
-// Last time updated: 12.10.2020
+// Last time updated: 13.10.2020
 // Feedback on the filter: send message to ixoth72 @ reddit, or Ixoth#1431 @ discord
 //
 // This loot filter has following features:
@@ -44,7 +44,7 @@ ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4 OR hp5) CLVL<80]: %BLUE%!%WHITE%Mp
 // Don't show low quality items
 ItemDisplay[INF !leg]:
 // Don't show magical normal and exceptional unid weapons or armors (worthless in general (this filter is aimed more to the end game)
-ItemDisplay[(WEAPON OR ARMOR) MAG !ELT !ID !leg]:
+ItemDisplay[(WEAPON OR ARMOR) MAG !ELT !ID]:
 // Don't show normal superior or ethereal elite items (excluding RW items) which can't be used in runewords
 ItemDisplay[NMAG !RW ELT (EQ4 OR EQ5 OR EQ6) !leg]:
 // Don't show superior or ethereal items (normal or exceptional)
@@ -271,7 +271,7 @@ ItemDisplay[r28]: %PURPLE%»» »» »» »» »» »» %RED%%RUNENAME% %GREEN%[
 ItemDisplay[r29 OR r33]: %PURPLE%»» »» »» »» %RED%%RUNENAME% %GREEN%[%RUNENUM%]%PURPLE% «« «« «« ««
 ItemDisplay[r30]: %PURPLE%o==[]:::::::::::::::::> %RED%%RUNENAME% %GREEN%[%RUNENUM%]%PURPLE% <:::::::::::::::::[]==o
 ItemDisplay[r31]: %PURPLE%o==[]::::::::::::::::::::::::::::::::> %RED%%RUNENAME% %GREEN%[%RUNENUM%]%PURPLE% <::::::::::::::::::::::::::::::::[]==o
-ItemDisplay[(ARMOR OR WEAPON) MAG]: %BLUE%%NAME%
+ItemDisplay[(ARMOR OR WEAPON) MAG]: %BLUE%%NAME%%CONTINUE%
 // Rare weapons and armors
 ItemDisplay[(ARMOR OR WEAPON) RARE !ID]: %YELLOW%%NAME%
 // Jewels
