@@ -17,6 +17,7 @@ This loot filter has following features:
 * Imbuable items (currently coronas are only supported) are shown in the ground
 * Normal Armors (which have enhanced armor class) are shown clearly in the ground
 * Some selected normal items with +3 skills are shown clearly in the ground
+* Shows with ED suffix normal items with enchanted damage/-defense
 
 This loot filter hides following things:
 
@@ -25,7 +26,20 @@ This loot filter hides following things:
 * Magical normal and exceptional unid items (including arrows and bolts)
 * all other items (not runeword, set or uniques) which are not matched by the filter (elite/normal/exceptional items which are neither weapons or armors)
 * Id scrolls (after character level 80)
-* Small gold stacks (based on character level)
+* Small gold stacks (under 5k) are hidden (after level 80)
+* Ethereal belts, boots and gloves
+* Weapons and armor with 1 socket
+* items that aren't useful for runewords (1-socket, gloves, boots, belts, 1x2 daggers, 5-socket bows)
+* 2-socket (except non-eth light armors with high defense) Armor
+* Non-eth body armor with less than 450 defense (light) or without high defense (medium/heavy)
+* Eth body armor with less than 650 defense (600 defense if it has sockets)
+* Shields (except Monarch, Hyperion, or Troll Nest with either high defense or max sockets)
+* Non-circlet helms without sockets and high defense and either capable of 3 sockets, or Shako (i.e. not Hydraskull, Armet, Giant Conch)
+* Polearms and spears that aren't eth, 3+ socket with ED, or 4-socket
+* Bows/crossbows except 4-socket or 3-socket with ED or 0-socket with ED and capable of 4 sockets (i.e. Blade Bow & Great Bow)
+* Axes - Tomahawk, any eth non-ED (except 0/4+s Berserker Axe & Glorious Axe, 4+s Ettin Axe & Champion Axe, 5s Silver-Edged Axe), any non-eth // non-ED (except 3+s Berserker Axe)
+* Maces - Reinforced Mace, Devil Star, Truncheon, Tyrant Club, any eth non-ED (except 0/6s Thunder Maul, 4+s Scourge), any non-eth non-ED // (except 3+s Scourge)
+* Swords - Falcata, Ataghan, Elegant Blade, Hydra Edge, any eth non-ED (except 0s Legend Sword & Colossus Sword & Colossus Blade, any 3s, any 2-handed 4+s), any non-eth non-ED (except 3+s Phase Blade & Colossus Blade)
 
 This filter (in some parts) is based on Kryszard's Loot Filter version 1.9. Credits goes to him/her on those respective parts of this filter).
 
