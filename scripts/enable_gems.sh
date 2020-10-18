@@ -4,4 +4,3 @@ sed -i -e "s|^ItemDisplay\[glg\]:$|//ItemDisplay\[glg\]\:|g" ../item.filter
 sed -i -e "s|^ItemDisplay\[glr\]:$|//ItemDisplay\[glr\]\:|g" ../item.filter
 sed -i -e "s|^ItemDisplay\[glb\]:$|//ItemDisplay\[glb\]\:|g" ../item.filter
 sed -i -e "s|^ItemDisplay\[gly\]:$|//ItemDisplay\[gly\]\:|g" ../item.filter
-

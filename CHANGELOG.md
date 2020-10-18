@@ -45,3 +45,8 @@ Quite lot of blank item labels issues should be now sorted (special thanks to He
 
 ## V1.13
 Refactoring and improvements
+
+## V1.14
+* Show ED prefix on normal items which have enchanted damage/-defence
+* Hide more useless normal items
+* Show +3 item sklls for normal items (which have them)
