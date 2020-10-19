@@ -59,9 +59,9 @@ ItemDisplay[(WEAPON OR ARMOR) (MAG OR RARE) !ELT !ID CLVL>79 !leg]:
 // Don't show regular (in quality of normal, exceptional or elite items (excluding RW items)), which can't be used in runewords
 ItemDisplay[NMAG !RW (EQ4 OR EQ5 OR EQ6) !leg ETH]:
 // Hide weapons or armors with only one socket
-ItemDisplay[(WEAPON OR ARMOR) NMAG SOCK=1 !leg]:
+ItemDisplay[(WEAPON OR ARMOR) NMAG !RW SOCK=1 !leg]:
 // Hide 1x2 daggers
-ItemDisplay[(7dg OR 7di) NMAG]:
+ItemDisplay[(7dg OR 7di) NMAG !RW]:
 // Hide 5 socket non-RW bows
 ItemDisplay[(WP9 OR WP10) NMAG !RW SOCK=5]:
 // Hide 2 socket non-RW armors (except high defense non-ethereal ones)
@@ -84,25 +84,26 @@ ItemDisplay[(WP7 OR WP8) NMAG !RW (!ETH OR (ETH SOCK<3 ED) OR (ETH SOCK=4 !ED<15
 // Hide javelins which are not ethereal and have no ED
 ItemDisplay[NMAG !RW WP6 !(ETH ED>0)]:
 // Hide normal bows/xbows without +3 amazon bow & crossbow skills and except 4-socket or 3-socket with ED or 0-socket with ED and capable of 4 sockets (i.e. Blade Bow & Great Bow)
-ItemDisplay[(WP9 OR WP10) NMAG SOCK=4 !ED]:
-ItemDisplay[(WP9 OR WP10) NMAG (((amc OR amb OR am7 OR am6 OR am2 OR am1) TABSK0<3) OR (SOCK>2 SOCK<5 !ED=15) OR ((6hb OR 6cb) SOCK=0))]:
+ItemDisplay[(WP9 OR WP10) NMAG !RW SOCK=4 !ED]:
+ItemDisplay[(WP9 OR WP10) NMAG !RW (((amc OR amb OR am7 OR am6 OR am2 OR am1) TABSK0<3) OR (SOCK>2 SOCK<5 !ED=15) OR ((6hb OR 6cb) SOCK=0))]:
 // Hide axes: Tomahawk, any eth non-ED (except 0/4+s Berserker Axe & Glorious Axe, 4+s Ettin Axe & Champion Axe, 5s Silver-Edged Axe), any non-eth non-ED (except 3+s Berserker Axe)
 ItemDisplay[7ha NMAG !RW]:
-ItemDisplay[(7wa OR 7gi) NMAG !RW (ETH ED<15) (!SOCK=0 AND !SOCK>3)]:
-ItemDisplay[(72a OR 7ga OR 7ba) NMAG !RW SOCK>3 (ETH !ED<15)]:
-ItemDisplay[7wa NMAG !RW (!ETH ED<15) (!SOCK=3)]:
+ItemDisplay[(7wa OR 7gi) NMAG !RW (ETH ED<5) (!SOCK=0 AND !SOCK>3)]:
+ItemDisplay[7ba NMAG !RW !SOCK=5 ETH ED<5]:
+ItemDisplay[(72a OR 7ga) NMAG !RW SOCK<4 (ETH ED<5)]:
+ItemDisplay[7wa NMAG !RW (!ETH ED<5) !SOCK=3]:
 ItemDisplay[WP1 !7wa !RW NMAG !ETH]:
-ItemDisplay[WP1 !(7wa OR 7gi OR 72a OR 7ga OR 7ba) NMAG !RW (!ETH OR (ETH ED<15))]:
+ItemDisplay[WP1 !(7wa OR 7gi OR 72a OR 7ga OR 7ba) NMAG !RW (!ETH OR (ETH ED<5))]:
 // Hide maces: Reinforced Mace, Devil Star, Truncheon, Tyrant Club, any eth non-ED (except 0/6s Thunder Maul, 4+s Scourge), any non-eth non-ED (except 3+s Scourge)
 ItemDisplay[(7ma OR 7mt OR 7cl OR 7sp) !RW NMAG]:
 ItemDisplay[7fl !RW NMAG ((SOCK<3 !ETH ED<15) OR (SOCK<4 ETH ED<15))]:
 ItemDisplay[7gm !RW NMAG (!SOCK=0 !SOCK=6 ETH ED<15)]:
 ItemDisplay[WP2 !RW NMAG ETH ED<15]:
 // Hide swords: Falcata, Ataghan, Elegant Blade, Hydra Edge, any eth non-ED (except 0s Legend Sword & Colossus Sword & Colossus Blade, any 3s, any 2-handed 4+s), any non-eth non-ED (except 3+s Phase Blade & Colossus Blade)
-ItemDisplay[NMAG (7ss OR 7sm OR 7sb OR 7fc)]:
-ItemDisplay[NMAG ETH WP3 !(ED>0 OR (SOCK=0 (72h OR 7fb OR 7gd)) OR SOCK=3 OR (SOCK>3 !7bs !7ls))]:
-ItemDisplay[NMAG !ETH WP3 !(ED>0 OR (SOCK>2 (7cr OR 7gd)))]:
-// Hide ethereal belts, gloves, boots
+ItemDisplay[NMAG !RW (7ss OR 7sm OR 7sb OR 7fc)]:
+ItemDisplay[NMAG !RW ETH WP3 !(ED>0 OR (SOCK=0 (72h OR 7fb OR 7gd)) OR SOCK=3 OR (SOCK>3 !7bs !7ls))]:
+ItemDisplay[NMAG !RW !ETH WP3 !(ED>0 OR (SOCK>2 (7cr OR 7gd)))]:
+// Hide ethereal belts, gloves, boots (even sets and uniques)
 ItemDisplay[(EQ4 OR EQ5 OR EQ6) ETH]:
 // Hide lower quality healing and mana potions afte level 80
 ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4 OR mp1 OR mp2 OR mp3 OR mp4) CLVL>79]:
@@ -140,21 +141,21 @@ ItemDisplay[gly]:
 ItemDisplay[skl]: %WHITE%Skull %ORANGE%[%GRAY%O%ORANGE%]
 // <- Modify these to your own focuses
 // Hide normal paladin shields without ED less than 60 or all res of 40+
-ItemDisplay[CL3 NMAG (RES<40 ITEMSTAT17<60)]:
+ItemDisplay[CL3 NMAG !RW (RES<40 ITEMSTAT17<60)]:
 // Hide normal necro heads (without proper skills)
-ItemDisplay[CL4 NMAG (SK74<3 SK80<3 SK70<3 SK69<3 SK67<3 SK83<3 SK84<3 SK92<3 SK74<2 SK93<3 SK91<3 SK87<3 SK86<3 SK82<3 SK81<3 SK77<3 SK76<3 SK78<3 SK95<3 SK94<3 SK90<3 SK85<3 SK89<3 SK88<3 SK80<3 SK79<3)]:
+ItemDisplay[CL4 NMAG !RW (SK74<3 SK80<3 SK70<3 SK69<3 SK67<3 SK83<3 SK84<3 SK92<3 SK74<2 SK93<3 SK91<3 SK87<3 SK86<3 SK82<3 SK81<3 SK77<3 SK76<3 SK78<3 SK95<3 SK94<3 SK90<3 SK85<3 SK89<3 SK88<3 SK80<3 SK79<3)]:
 // Hide normal druid pelts (without proper skills)
-ItemDisplay[CL1 NMAG (SK244<3 SK249<3 SK250<3 SK240<3 SK245<3 SK237<3 SK247<3 SK227<3 SK243<3 SK238<3 SK239<3 SK221<3 SK221<2 SK221<1 SK225<3 SK225<2 SK225<1 SK246<3 SK236<3 SK248<3 SK242<3 SK233<3 SK232<3 SK235<3 SK234<3 SK231<3 SK241<3)]:
+ItemDisplay[CL1 NMAG !RW (SK244<3 SK249<3 SK250<3 SK240<3 SK245<3 SK237<3 SK247<3 SK227<3 SK243<3 SK238<3 SK239<3 SK221<3 SK221<2 SK221<1 SK225<3 SK225<2 SK225<1 SK246<3 SK236<3 SK248<3 SK242<3 SK233<3 SK232<3 SK235<3 SK234<3 SK231<3 SK241<3)]:
 // Hide normal barbarian helms (without proper skills)
-ItemDisplay[CL2 NMAG (SK154<3 SK149<3 SK154<1 SK149<1 SK153<1 SK150<1 SK142<1 SK138<1 SK151<3 SK143<3 SK139<3 SK144<3 SK147<3 SK148<3 SK145<3 SK141<3 SK155<3 SK146<3 SK137<3 SK152<3 SK140<3)]:
+ItemDisplay[CL2 NMAG !RW (SK154<3 SK149<3 SK154<1 SK149<1 SK153<1 SK150<1 SK142<1 SK138<1 SK151<3 SK143<3 SK139<3 SK144<3 SK147<3 SK148<3 SK145<3 SK141<3 SK155<3 SK146<3 SK137<3 SK152<3 SK140<3)]:
 // Hide normal staves and orbs (without proper sorceress skills)
-ItemDisplay[(WP11 OR CL6) NMAG (SK50<3 SK55<3 SK59<3 SK60<3 SK64<3 SK65<3 SK48<3 SK49<3 SK54<3 SK53<3 SK57<3 SK58<3 SK63<3 SK46<3 SK47<3 SK51<3 SK52<3 SK56<3 SK61<3 SK62<3)]:
+ItemDisplay[(WP11 OR CL6) NMAG !RW (SK50<3 SK55<3 SK59<3 SK60<3 SK64<3 SK65<3 SK48<3 SK49<3 SK54<3 SK53<3 SK57<3 SK58<3 SK63<3 SK46<3 SK47<3 SK51<3 SK52<3 SK56<3 SK61<3 SK62<3)]:
 // Hide normal wands (without proper skills)
-ItemDisplay[WP12 NMAG (SK74<3 SK80<3 SK70<3 SK69<3 SK67<3 SK83<3 SK84<3 SK92<3 SK74<2 SK93<3 SK91<3 SK87<3 SK86<3 SK82<3 SK81<3 SK77<3 SK76<3 SK78<3 SK95<3 SK94<3 SK90<3 SK85<3 SK89<3 SK88<3 SK80<3 SK79<3)]:
+ItemDisplay[WP12 NMAG !RW (SK74<3 SK80<3 SK70<3 SK69<3 SK67<3 SK83<3 SK84<3 SK92<3 SK74<2 SK93<3 SK91<3 SK87<3 SK86<3 SK82<3 SK81<3 SK77<3 SK76<3 SK78<3 SK95<3 SK94<3 SK90<3 SK85<3 SK89<3 SK88<3 SK80<3 SK79<3)]:
 // Hide normal scepters (without propel skills)
-ItemDisplay[WP13 NMAG (SK109<3 SK110<3 SK115<3 SK120<3 SK124<3 SK125<3 SK108<3 SK113<3 SK114<3 SK118<3 SK119<3 SK122<3 SK123<3 SK106<3 SK107<3 SK111<3 SK112<3 SK116<3 SK117<3 SK121<3 SK112<3)]:
+ItemDisplay[WP13 NMAG !RW (SK109<3 SK110<3 SK115<3 SK120<3 SK124<3 SK125<3 SK108<3 SK113<3 SK114<3 SK118<3 SK119<3 SK122<3 SK123<3 SK106<3 SK107<3 SK111<3 SK112<3 SK116<3 SK117<3 SK121<3 SK112<3)]:
 // Hide normal claws (without proper skills)
-ItemDisplay[CL5 NMAG (SK261<3 SK262<3 SK263<3 SK264<3 SK265<3 SK266<3 SK267<3 SK268<3 SK269<3 SK271<3 SK272<3 SK273<3 SK274<3 SK275<3 SK276<3 SK277<3 SK278<3 SK279<3 SK280<3)]:
+ItemDisplay[CL5 NMAG !RW (SK261<3 SK262<3 SK263<3 SK264<3 SK265<3 SK266<3 SK267<3 SK268<3 SK269<3 SK271<3 SK272<3 SK273<3 SK274<3 SK275<3 SK276<3 SK277<3 SK278<3 SK279<3 SK280<3)]:
 // "`-._,-'"`-._,-'"`-._,-'"`-._,-' <- Hide items section "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 
 // "`-._,-'"`-._,-'"`-._,-'"`-._,-' Gems -> "`-._,-'"`-._,-'"`-._,-'"`-._,-'
