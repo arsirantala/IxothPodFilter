@@ -219,7 +219,11 @@ ItemDisplay[(WEAPON OR ARMOR) !SUP ETH SET]: %GRAY%[%WHITE%s%GRAY%] %GREEN%%NAME
 // "`-._,-'"`-._,-'"`-._,-'"`-._,-' Item level information "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 ItemDisplay[(WEAPON OR ARMOR OR jew OR amu OR rin OR cm1 OR cm2 OR cm3) (MAG OR RARE OR UNI OR SET)]: %NAME% %GRAY%[%WHITE%i%ILVL%%GRAY%]%CONTINUE%
 // "`-._,-'"`-._,-'"`-._,-'"`-._,-' Enchanted damage/-armor "`-._,-'"`-._,-'"`-.
-ItemDisplay[(ARMOR OR WEAPON) ED>0]: %NAME%%GREEN%ED%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) ED>0]: %NAME%%GREEN%+ED%CONTINUE%
+
+// "`-._,-'"`-._,-'"`-._,-'"`-._,-' Increased durability and less requirements "`-._,-'"`-._,-'"`-.
+ItemDisplay[ARMOR ITEMSTAT91<0]: %NAME%%GRAY%[%GREEN%-requ%GRAY%]%CONTINUE%
+ItemDisplay[ARMOR ITEMSTAT75>9]: %NAME%%GRAY%[%GREEN%+max dura%GRAY%]%CONTINUE%
 
 // "`-._,-'"`-._,-'"`-._,-'"`-._,-' Item tier (* for exceptional, ** for elite) "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 ItemDisplay[(WEAPON OR ARMOR) EXC]: %NAME%%RED%*%CONTINUE%
